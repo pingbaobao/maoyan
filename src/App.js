@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import {Redirect,Switch,Route, BrowserRouter as Router} from 'react-router-dom'
+import Moives from "@pages/hotmoives/Moives"
+import Cinemas from "@pages/cinemas/Cinemas"
+import Mine from "@pages/mine/Mine"
+import Search from "@pages/search/Search"
+import NotFound from '@pages/notfound'
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <Router>
+            <>
+            <Switch>
+              <Route path="/" exact component={Moives}></Route>
+              <Route path="/moives/hot" exact component={Moives}></Route>
+              <Route path="/cinemas" exact component={Cinemas}></Route>
+              <Route path="/search" exact component={Search}></Route>
+              <Route path="/mine" exact component={Mine}></Route>
+              <Route path="/notfound" component={NotFound}></Route>
+              <Redirect to ={{pathname:'/notfound'}}/>>
+            </Switch>
+            </>
+          </Router>
       </div>
     );
   }
