@@ -1,53 +1,39 @@
-
 import styled from 'styled-components'
-export const CinemaWrapper=styled.div`
+
+export const HotDetailWrapper=styled.div`
+    height: 100vh;
+    width:100vw;
     display:flex;
     flex-direction:column;
-    height: 100vh;
-` 
-export const CinameBarWrapper = styled.div`
-    z-index:30;
-    padding: 0 15px;
-    height: 44px;
-    width: 100%;
-    font-size: 15px;
-    line-height: 44px;
-    color: #777;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #f5f5f5;
-    div.location{
-        span.location-check{
-            margin-left:3px;
-            font-size:12px;
+`
 
+export const DateBarWrapper=styled.section`
+    width:100vw;
+    height:45px;
+    border-bottom:solid 1px #E7E7E7;
+    overflow: auto;
+    /* 去除滚动条 */
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar { width: 0 !important }
+    div.date-item-wrapper{
+        width:234vw;
+        .date-item{
+            float:left;
+            line-height:44px;
+            text-align:center;
+            width:33.33vw;
+            scroll-behavior:none;
         }
     }
-    div.search{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 28px;
-        font-size: 13px;
-        flex:1;
-        color: #b2b2b2;
-        margin-left: 18px;
-        border: .5px solid #e6e6e6;
-        border-radius: 5px;
-        background:#fff;
-    }
 `
-export const CinameListWrapper=styled.section`
-    flex:1;
-    overflow:auto;
-`
+
 export const CinemaMenuWrapper=styled.div`
     z-index:30;
     height: 40px;
     width:100%;
     line-height:40px;
-    border-bottom:solid 1px #F7F7F7;
+    border-bottom:solid 1px #E7E7E7;
     display:flex;
     justify-content:space-around;
 `
@@ -89,15 +75,6 @@ export const CinemaMenuItemWrapper=styled.div`
     }
 `
 
-export const PullListWrapper=styled.div`
-    width:100vw;
-    max-height:${props=>props.height};
-    overflow:auto;
-    background:#fff;
-    position:relative;
-    top:135px;
-    left:0;
-`
 export const LayerWrapper=styled.div`
     width:100vw;
     height:100vh;
@@ -105,4 +82,18 @@ export const LayerWrapper=styled.div`
     position:absolute;
     top:0;
     left:0;
+`
+export const PullListWrapper=styled.div`
+    width:100vw;
+    max-height:${props=>props.height};
+    overflow:auto;
+    background:#fff;
+    position:relative;
+    top:323px;
+    left:0;
+`
+
+export const CinameListWrapper=styled.section`
+    flex:1;
+    overflow:auto;
 `

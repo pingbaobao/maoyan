@@ -18,13 +18,13 @@ class FooterBar extends Component {
   constructor(props) {
     super(props);
     this._path=this.props.match.path
-    if(this._path==='/')  this._path='/moives'
+    if(this._path==='/moives')  this._path='/moives/hot'
     this.state = {
       selectedTab: this._path,
       tabs: [
         { id: uuid(), title: '电影', selected: '/moives/hot', icons:  'iconfont icon-74' },
         { id: uuid(), title: '影院', selected: '/cinemas',icons: 'iconfont icon-yingyuanA' },
-        { id: uuid(), title: '我的', selected: '/mine',icons: 'iconfont icon-wode' },
+        { id: uuid(), title: '我的', selected: '/login',icons: 'iconfont icon-wode' },
     ]
     };
     this.goTo=this.goTo.bind(this);
@@ -39,10 +39,12 @@ class FooterBar extends Component {
     )
   }
   goTo(_selected){
-      this.setState({
-          selectedTab:_selected
-      })
-      this.props.history.push(_selected)
+      if(this.state.selectedTab!==_selected){
+          this.setState({
+            selectedTab:_selected
+          })
+          this.props.history.push(_selected);
+      }
   }
 }
 

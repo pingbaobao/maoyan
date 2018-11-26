@@ -74,7 +74,8 @@ td {
 }
  
 html {
-    font-family: 'sans-serif', "Microsoft YaHei", "微软雅黑", "Tahoma", "Helvetica";
+    font-family: PingFangSC-Regular,Hiragino Sans GB,sans-serif;
+    -webkit-font-smoothing: antialiased;
     font-size: 10px;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;

@@ -15,7 +15,8 @@ module.exports = function override(config, env) {
         '@assets': resolve('assets'),
         '@components': resolve('components'),
         '@pages': resolve('pages'),
-        '@lib': resolve('lib')
+        '@lib': resolve('lib'),
+        '@util': resolve('util')
     }
     return config;
 };

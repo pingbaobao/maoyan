@@ -1,6 +1,5 @@
 import React,{Component} from 'react'
 import {SearchWrapper} from './styledComponent' 
-import {withRouter} from 'react-router-dom'
 import Header from '@components/common/header'
 import GoBack from './GoBack'
 class Search extends Component{

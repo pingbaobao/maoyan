@@ -1,8 +1,8 @@
 
 import styled from 'styled-components'
 export const HeaderWrapper = styled.div`
-    height: 51.5px;
-    padding:0 0 1px 0;
+    height: 1.373333rem;
+    padding:0 0 .026667rem 0;
     width: 100%;
     background: #e54847;
     display: flex; 
@@ -10,12 +10,12 @@ export const HeaderWrapper = styled.div`
     align-items: center;
     padding: 0rem .10rem;
     .left, .right, .center {
-        padding-bottom:2px;
+        padding-bottom:.053333rem;
         color: #fff;
         font-size: .48rem;
     }
     .left,.right{
-        width:30px;
+        width:.8rem;
         text-align:center;
     }
     .center{
@@ -24,7 +24,7 @@ export const HeaderWrapper = styled.div`
     }
     .left{
         div{
-            font-size:28px;
+            font-size:.746667rem;
         }
     }
 `

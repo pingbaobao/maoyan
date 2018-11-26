@@ -1,8 +1,8 @@
 import React,{Component} from 'react' 
-import {MoivesListWrapper} from './styledComponent'
-import MoiveItem from './MoiveItem'
-import axios from 'axios'
-class MoivesList extends Component{
+import {HotMoivesListWrapper} from '../styledComponent'
+import MoiveItem from './HotMoiveItem'
+import ajax from '@util/axios'
+class HotMoivesList extends Component{
     constructor(props){
         super()
         this.state={
@@ -10,20 +10,14 @@ class MoivesList extends Component{
         }
     }
     async componentWillMount(){
-        let _result=await axios.get('/my/ajax/movieOnInfoList?token=')
-        .then(function (response) {
-            return response;
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        let _result=await ajax({url:"/my/ajax/movieOnInfoList?token="})
         this.setState({
-            movieList:_result.data.movieList
+            movieList:_result.movieList
         })
     }
     render(){
         return(
-            <MoivesListWrapper>
+            <HotMoivesListWrapper>
                 <section>
                     {
                         this.state.movieList.map(item=>{
@@ -31,8 +25,8 @@ class MoivesList extends Component{
                         })
                     }
                 </section>
-            </MoivesListWrapper>
+            </HotMoivesListWrapper>
         )
     }
 }
-export default MoivesList;
+export default HotMoivesList;
